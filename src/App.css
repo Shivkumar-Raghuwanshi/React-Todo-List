@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.App {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color:rgb(236, 233, 233);
+
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(241, 241, 155);
+    border-radius: 20px;
+    justify-content: space-evenly;
+    border: 2px solid;
+    border-color: azure;
+
+}
+.form{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgb(243, 240, 236);
+    border-radius: 10px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    justify-content: space-evenly;
+
+}
+input{
+    margin: 0 10px 10px 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 0;
+    background-color: rgb(250, 250, 250);
+    height: 40px;
+}
+
+label{
+    padding: 10px;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 0;
+    background-color: black;
+    color: white;
+    
+}
+.item{
+    display: flex;
+    margin-top: 20px;
+    width: 300px;
+    text-align: left;
+    padding: 5px;
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+.btn{
+    color:white;
+    background-color: red;
+}
