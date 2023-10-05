@@ -44,7 +44,7 @@ export default function App() {
 
         <div className="form-container">
           <form className="form" onSubmit={handleSubmit}>
-            <label htmlFor="item">Add new item</label>
+            <label htmlFor="item">Add New Item</label>
             <input
               type="text"
               id="item"
