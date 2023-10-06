@@ -1,3 +1,86 @@
+import React, { useEffect, useState } from "react";
+import './App.css';
+import NewItemInput from './NewItemInput';
+import List from './List';
+
+
+export default function App() {
+  const [todos, setTodos] = useState(() => {
+    const localValue = localStorage.getItem("ITEMS")
+    if (localValue === null) {
+      return [];
+    } else {
+      return JSON.parse(localValue);
+    }
+
+  });
+
+  useEffect(() => {
+    localStorage.setItem("ITEMS", JSON.stringify(todos))
+  }, [todos])
+
+  function addTodo(title) {
+    setTodos((currentTodos) => {
+      return [
+        ...currentTodos,
+        { id: crypto.randomUUID(), title, completed: false }
+      ]
+    });
+
+  }
+
+
+
+  function toggleTodo(id, completed) {
+    setTodos((currentTodos) => {
+      return currentTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed };
+        } else {
+          return todo;
+        }
+
+      })
+    })
+
+  }
+
+  function deleteTodo(id) {
+    setTodos((currentTodos) => {
+      return currentTodos.filter((todo) => todo.id !== id)
+    })
+  }
+
+
+  return (
+    <>
+
+      <div className="App">
+
+        <div className="form-container">
+          <NewItemInput onSubmit={addTodo} />
+          <h2>To Do List</h2>
+          <List todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+
+        </div>
+
+      </div>
+
+    </>
+
+  );
+}
+
+
+
+
+
+
+
+
+
+// Todo app in single file (App.jsx)
+/*
 import React, { useState } from "react";
 import './App.css'
 
@@ -90,3 +173,4 @@ export default function App() {
 
   )
 }
+*/
